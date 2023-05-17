@@ -10,13 +10,7 @@ namespace HotelFinder.DataAccess.Concrete
 {
     public class HotelRepository : IHotelRepository
     {
-        public List<Hotel> GetHotels()
-        {
-            using (var hotelDbContext = new HotelDbContext())
-            {
-                return hotelDbContext.Hotels.ToList();
-            }
-        }
+
         public Hotel CreateHotel(Hotel hotel)
         {
             using (var hotelDbContext = new HotelDbContext())
@@ -53,6 +47,14 @@ namespace HotelFinder.DataAccess.Concrete
                 hotelDbContext.Hotels.Update(hotel);
                 hotelDbContext.SaveChanges();
                 return hotel;
+            }
+        }
+
+        public List<Hotel> GetAllHotels()
+        {
+            using (var hotelDbContext = new HotelDbContext())
+            {
+                return hotelDbContext.Hotels.ToList();
             }
         }
     }
