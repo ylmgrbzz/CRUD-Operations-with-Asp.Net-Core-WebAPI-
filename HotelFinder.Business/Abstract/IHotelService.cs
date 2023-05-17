@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HotelFinder.DataAccess.Abstract
+namespace HotelFinder.Business.Abstract
 {
-    public interface IHotelRepository
+    public interface IHotelService
     {
         List<Hotel> GetAllHotels();
         Hotel GetHotelById(int id);
